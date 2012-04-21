@@ -8,9 +8,11 @@
   <% @craters.each_with_index do |crater, index| %>
     <%= content_tag :h2, index/2+1 if index % 2 == 0 %>
     <%= raw "<ul id=\"list#{index}\" class=\"thumbnails\">" if index % 2 == 0 %>
-    <li id="crater<%= index %>" class="span4 thumbnail">
-    <%= radio_button_tag "selected_crater[#{index/2}]", crater.id %>
-      <%= image_tag crater.image_url, :width => "280px" %>
+    <li id="crater<%= index %>" class="span4">
+      <label>
+	<%= radio_button_tag "selected_crater[#{index/2}]", crater.id %>
+	<%= image_tag crater.image_url, :width => "280px" %>
+      </label>
     </li>
     <%= raw "</ul>" if index %2 == 1 %>
   <% end %>

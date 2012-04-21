@@ -6,6 +6,9 @@
 <h3><%= @sphere.name %>にあるクレーターのうち人気があるものは</h3>
 <div>
 <h4><%= "#{@popular_crater.name} (#{@popular_crater.latitude}, #{@popular_crater.longitude})" %></h4>
-<%= image_tag @popular_crater.image_url, :class => :thumbnail %>
-</div><br />
-<%= link_to "戻る", crater_match_path %>
+<%= image_tag @popular_crater.image_url, :class => "span6" %>
+</div>
+<br />
+<div class="span6">
+  <%= link_to "戻る", crater_match_path %>
+</div>
