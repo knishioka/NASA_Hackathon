@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def crater_match
-    @craters = Crater.order("random()").where("image_url != \"no image\"").limit(10)
+    @craters = Crater.order("random()").where("image_url IS NOT NULL").limit(10)
   end
 
   def crater_match_result
@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     @craters = []
     session[:sphere_id] = @sphere.id
     Sphere.pluck(:id).each do |id|
-      @craters << Crater.where("image_url != \"no image\"").where(:sphere_id => id).order("random()").first
+      @craters << Crater.where("image_url IS NOT NULL").where(:sphere_id => id).order("random()").first
     end
   end
 
