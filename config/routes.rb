@@ -7,4 +7,7 @@ NasaHackathon::Application.routes.draw do
   
   match "api/sphere", :to => "api#sphere"
   match "api/crater", :to => "api#crater"  
+  match "api/sphere_list", :to => "api#sphere_list"
+  match "api/crater_list", :to => "api#crater_list"
+
 end
