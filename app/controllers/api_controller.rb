@@ -16,7 +16,8 @@ class ApiController < ApplicationController
   end
 
   def crater_list
-    @craters = Crater.where(:sphere_id => params[:sphere_id]).offset(params[:offset]).select("id, name, image_url, latitude, longitude")
+    @craters = Crater.where(:sphere_id => params[:sphere_id]).offset(params[:offset])
+      .select("id, name, image_url, latitude, longitude").limit(params[:count] ? params[:count] : 20)
     render :json => @craters
   end
 
