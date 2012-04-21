@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120421072004) do
+ActiveRecord::Schema.define(:version => 20120421201133) do
+
+  create_table "crater_like_counts", :force => true do |t|
+    t.integer  "crater_id",                 :null => false
+    t.integer  "like_count", :default => 0, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "crater_like_counts", ["crater_id"], :name => "index_crater_like_counts_on_crater_id", :unique => true
 
   create_table "craters", :force => true do |t|
     t.integer  "sphere_id"
