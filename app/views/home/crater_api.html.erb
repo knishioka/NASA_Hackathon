@@ -1,0 +1,30 @@
+<h2>CraterAPIについて</h2>
+<p>Crater情報を取得する簡単なAPIを公開しています。</p>
+
+<h3>天体のリスト</h3>
+<div class="well">
+  <h4>Request URL</h4>
+  http://craters.heroku.com/api/sphere_list
+  <h4>Response</h4>
+  [{"id":1,"name":"Venus"},{"id":2,"name":"Ganymede"},{"id":3,"name":"Callisto"}]
+</div>
+<h3>クレーターのリスト</h3>
+<div class="well">
+  <h4>Request URL</h4>
+  http://craters.heroku.com/api/crater_list?sphere_id=1&offset=10&count=3
+  <h4>Response</h4>
+  [{"id":14,"image_url":"http://www.lpi.usra.edu/venus/craters/images/04.3n003.8p225.gif",
+  "latitude":"4.0","longitude":"3.0","name":"Afiruwa"},
+  {"id":15,"image_url":"http://www.lpi.usra.edu/venus/craters/images/50.0n323.9p225.gif",
+  "latitude":"50.0","longitude":"323.0","name":"Aftenia"},
+  {"id":16,"image_url":"http://www.lpi.usra.edu/venus/craters/images/15.5n124.0p225.gif",
+  "latitude":"15.0","longitude":"124.0","name":"Afua"}]
+</div>
+<h3>クレーター単体の取得</h3>
+<div class="well">
+  <h4>Request URL</h4>
+  http://craters.heroku.com/api/crater?crater_id=20
+  <h4>Response</h4>
+  {"id":20,"image_url":"http://www.lpi.usra.edu/venus/craters/images/33.3s065.7p225.gif",
+  "latitude":"-33.0","longitude":"65.0","name":"Agrippina","sphere_id":1}
+</div>
