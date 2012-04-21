@@ -1,8 +1,11 @@
 <p>
-このサイトは<%= link_to "International Space Apps Challenge",  "http://spaceappschallenge.org/" %>でWebCreaterが一日で作ったWebCraterサイトです。<br />
+<%= link_to "International Space Apps Challenge",  "http://spaceappschallenge.org/" %>でWebCreaterが一日で作ったWebCraterサイトです。<br />
 Venus, Ganymede, Callistoにあるクレータについての情報があります。<br />
 主に
 <ul>
+  <li>クレーターの情報を<%= link_to "JSON形式で取得", crater_api_path %>したい人</li>
+  <li><%= link_to "クレーターの好みからお薦め", crater_match_path %>の天体を知りたい人</li>
+  <li>クレーターに詳しい人のための<%= link_to "クレータークイズ", crater_quiz_path %>に挑戦したい人</li>
   <li>クレーターに興味のある人</li>
   <li>穴があったら入りたい人</li>
   <li>王様の耳がロバの耳だと気づいた人</li>
