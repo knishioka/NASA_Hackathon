@@ -1,0 +1,11 @@
+<% if @result %>
+  <div class="alert alert-success">
+    正解!
+  </div>
+<% else %>
+  <div class="alert alert-error">
+    不正解!
+  </div>
+<% end %>
+
+<%= link_to "戻る", crater_quiz_path %>

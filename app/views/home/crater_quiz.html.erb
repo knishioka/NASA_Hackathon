@@ -1,1 +1,9 @@
+<%= @result %>
+
 <h2>この中から<%= @sphere.name %>のクレーターを探してください</h2>
+
+<ul class="thumbnails">
+  <% @craters.each do |crater| %>
+    <li class="span2"><a href=<%= crater_quiz_result_path(crater) %> class="thumbnail"><%= image_tag crater.image_url %></a></li>
+  <% end %>
+</ul>

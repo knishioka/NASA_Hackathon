@@ -12,7 +12,16 @@ class HomeController < ApplicationController
   end
 
   def crater_quiz
-    @sphere = Sphere.first
+    @sphere = Sphere.order("random()").first
+    @craters = []
+    session[:sphere_id] = @sphere.id
+    Sphere.pluck(:id).each do |id|
+      @craters << Crater.where("image_url != \"no image\"").where(:sphere_id => id).order("random()").first
+    end
+  end
+
+  def crater_quiz_result
+    @result = (session[:sphere_id] == Crater.find(params[:id]).sphere_id)
   end
 
   def contact
